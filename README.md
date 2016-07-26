@@ -5,7 +5,7 @@ This project enables you to install Oracle 11g XE in a virtual machine running U
 
 ## Acknowledgements
 
-This is a fork from https://github.com/hilverd/vagrant-ubuntu-oracle-xe.git.
+This is a fork from https://github.com/hilverd/vagrant-ubuntu-oracle-xe.git. I created it because the original project crashes on several places when trying to load the VM (I think it must be because of problems with the version of Vagrant/VirtualBox/Ubuntu). It is tested with Vagrant 1.8.5 and VirtualBox 5.0.24.
 Most of this readMe is left unmodified, except for the Ubuntu version and other details.
 
 This project was created based on the information in
@@ -20,7 +20,7 @@ contributions.
 
 ## Requirements
 
-* You need to have [Vagrant] and Virtualbox installed.
+* You need to have [Vagrant] and VirtualBox installed.
 * The host machine probably needs at least 4 GB of RAM (I have only tested 8 GB of RAM).
 * As Oracle 11g XE is only available for 64-bit machines at the moment, the host machine needs to
   have a 64-bit architecture.
