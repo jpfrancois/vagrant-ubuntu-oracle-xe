@@ -6,8 +6,7 @@ Vagrant.configure("2") do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box = "bento/ubuntu-16.04"
   config.vm.hostname = "oracle"
 
   # share this project under /home/vagrant/vagrant-ubuntu-oracle-xe
@@ -29,9 +28,13 @@ Vagrant.configure("2") do |config|
   end
 
   # This is just an example, adjust as needed
-  config.vm.provision :shell, :inline => "echo \"America/New_York\" | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata"
+  config.vm.provision :shell, :inline => "echo \"Europe/Paris\" | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata"
 
   config.vbguest.auto_update = true
+
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get install -y puppet
+  SHELL
 
   $install_puppet_modules = <<SCRIPT
   if [ -f /home/vagrant/vagrant-ubuntu-oracle-xe/oracle-jdbc/ojdbc6.jar ]; then
@@ -53,3 +56,4 @@ SCRIPT
   # Run the Maven goals for data-with-flyway
   config.vm.provision "shell", path: "flyway.sh"
 end
+

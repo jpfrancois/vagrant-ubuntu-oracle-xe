@@ -1,14 +1,17 @@
-# Oracle XE 11g on Ubuntu 12.04 using Vagrant
+# Oracle XE 11g on Ubuntu 16.04 using Vagrant
 
-This project enables you to install Oracle 11g XE in a virtual machine running Ubuntu 12.04, using
+This project enables you to install Oracle 11g XE in a virtual machine running Ubuntu 16.04, using
 [Vagrant] and [Puppet].
 
 ## Acknowledgements
 
+This is a fork from https://github.com/hilverd/vagrant-ubuntu-oracle-xe.git.
+Most of this readMe is left unmodified, except for the Ubuntu version and other details.
+
 This project was created based on the information in
 [Installing Oracle 11g R2 Express Edition on Ubuntu 64-bit] by Manish Raj, and the GitHub repository
 [vagrant-oracle-xe] by Stefan Glase. The former explains how to install Oracle XE 11g on Ubuntu
-12.04, without explicitly providing a Vagrant or provisioner configuration. The latter has the same
+16.04, without explicitly providing a Vagrant or provisioner configuration. The latter has the same
 purpose as this project but uses Ubuntu 11.10.
 
 Thanks to André Kelpe, Brandon Gresham, Charles Walker, Chris Thompson, Jeff Caddel, Joe FitzGerald,
@@ -17,7 +20,7 @@ contributions.
 
 ## Requirements
 
-* You need to have [Vagrant] installed.
+* You need to have [Vagrant] and Virtualbox installed.
 * The host machine probably needs at least 4 GB of RAM (I have only tested 8 GB of RAM).
 * As Oracle 11g XE is only available for 64-bit machines at the moment, the host machine needs to
   have a 64-bit architecture.
@@ -27,7 +30,7 @@ contributions.
 
 * Check out this project:
 
-        git clone https://github.com/hilverd/vagrant-ubuntu-oracle-xe.git
+        git clone https://github.com/jpfrancois/vagrant-ubuntu-oracle-xe.git
 
 * Install [vbguest]:
 
@@ -47,7 +50,7 @@ contributions.
     Many thanks to [Nicholas Blair](https://github.com/nblair) for contributing this feature.
 
 * Run `vagrant up` from the base directory of this project. The first time this will take a while -- up to 30 minutes on
-  my machine. Please note that building the VM involves downloading an Ubuntu 12.04
+  my machine. Please note that building the VM involves downloading an Ubuntu 16.04
   [base box](http://docs.vagrantup.com/v2/boxes.html) which is 323MB in size.
 
 These steps are also shown in an [asciicast] made by Daekwon Kang:
